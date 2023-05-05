@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VarunPortfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/729c61e057.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="logo.jpg" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Frontend Developer</p>
+                <h1>Hi, I'm <span>Varun</span><br></h1>
+            </div>
+        </div>
+
+    </div>
+    <!------------about--------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="back.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hola! I am Currently pursuing B.TECH from the National Institute of Technology,Raipur
+                     in Computer Science and Engineering. My hobbies are playing Cricket,Kabbadi, reading 
+                     books and listening to music. I also do competitive programming in various platforms like 
+                     CodeChef and Leetcode</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                        <p class="tab-links active-link" onclick="opentab('Education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="Skills">
+                        <ul>
+                            <li><span>Programming Languages</span><br>C++<br>Python</li>
+                            <li><span>Web</span><br>HTML<br>CSS<br>JavaScript</li>
+                            <li><span>Database</span><br>MySQL</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Education">
+                        <ul>
+                            <li><span>B.Tech</span><br>National Institute of Technology, Raipur</li>
+                            <li><span>12th</span><br> Narayana college, Hyderabad</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------Services----------->
+    <div id="achievements">
+        <div class="container"></div>
+        <h1 class="sub-title">My Achievements</h1>
+        <div class="achievements-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Develpment</h2>
+                <p>I have done Complete Web development course. </p>
+                <a href="https://www.udemy.com/certificate/UC-b19d17b7-1de0-4c71-9edc-a8c1028db3dc/?utm_source=sendgrid.com&utm_medium=email&utm_campaign=email">View Certificate</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-medal"></i>
+                <h2>Sports</h2>
+                <p>I got a gold medal in kabaddi int the sports festival, which is held by our college. I'am also a member of InterNit cricket team.</p>
+            </div>
+        </div>
+    </div>
+    <!-------------projects------------->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="work-1.png">
+                    <div class="layer">
+                        <h3>portfolio website</h3>
+                        <p>This website contains the information of myself</p>
+                        <a href="#"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="work-2.png">
+                    <div class="layer">
+                        <h3>Simon Game</h3>
+                        <p>This Game is based on memory power. It will increase the memory power of the user.</p>
+                        <a href="https://varun-thirunagar.github.io/Simon_Game/"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+    <!--------------contact------------------>
+    <div id="contact">
+        <div class="container">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i> varunchinnu02466@email.com</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/v_a_r_u_n_chinnu/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/varun-thirunagar-532615243/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://twitter.com/VThirunaga66673"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://github.com/VARUN-THIRUNAGAR/Simon_Game"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+        </div>
+        <div class="copyright">
+            <p>copyright 2023. All Rights Reserved</p>
+        </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+        function openmenu(){
+            sidemenu.styles.right = "0";
+        }
+        function closemenu(){
+            sidemenu.styles.right = "-200px";
+        }
+    </script>
+</body>
+</html>
